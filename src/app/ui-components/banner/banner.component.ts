@@ -1,5 +1,6 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import { Component} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BaseComponent } from '../base.component';
 
 @Component({
   selector: 'app-banner',
@@ -13,15 +14,6 @@ import { CommonModule } from '@angular/common';
   `,
   styleUrls: ['./banner.component.scss'],
 })
-export class BannerComponent {
-  @Input() appearance: 'solid' | 'stroked' = 'solid';
-  @Input() color: 'primary' | 'secondary' = 'primary';
-
-  @HostBinding('class')
-  get computedHostClasses() {
-    return {
-      [`df-${this.appearance}`]: true,
-      [`df-${this.color}`]: true,
-    };
-  }
+export class BannerComponent extends BaseComponent{
+  
 }

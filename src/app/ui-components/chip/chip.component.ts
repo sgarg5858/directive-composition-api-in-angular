@@ -1,12 +1,11 @@
 import {
   Component,
   EventEmitter,
-  HostBinding,
-  HostListener,
   Input,
   Output,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BaseComponent } from '../base.component';
 
 @Component({
   selector: 'app-chip',
@@ -20,34 +19,7 @@ import { CommonModule } from '@angular/common';
   `,
   styleUrls: ['./chip.component.scss'],
 })
-export class ChipComponent {
-  @Input() appearance: 'solid' | 'stroked' = 'solid';
-  @Input() color: 'primary' | 'secondary' = 'primary';
-
-  @HostBinding('class')
-  get computedHostClasses() {
-    return {
-      [`df-${this.appearance}`]: true,
-      [`df-${this.color}`]: true,
-    };
-  }
-
-  @Input()
-  @HostBinding('class.disabled')
-  disabled = false;
-
-  @HostBinding('attr.disabled')
-  get nativeDisabled(): '' | null {
-    return this.disabled ? '' : null;
-  }
-  @HostListener('click', ['$event'])
-  @HostListener('dblclick', ['$event'])
-  onClick(event: Event) {
-    if (this.disabled) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-    }
-  }
+export class ChipComponent extends BaseComponent {
   @Input()
   removable = false;
 
