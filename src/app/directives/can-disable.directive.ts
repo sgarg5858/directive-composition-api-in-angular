@@ -1,25 +1,20 @@
-import { Directive, HostBinding, HostListener, Input } from '@angular/core';
+import { Directive, HostBinding, Input } from '@angular/core';
+import { CanPreventDirective } from './can-prevent.directive';
 
 @Directive({
   selector: '[canDisable]',
   standalone: true,
+  hostDirectives:[CanPreventDirective]
 })
 export class CanDisableDirective {
   @Input()
   @HostBinding('class.disabled')
-  disabled = false;
+  public disabled = false;
 
   @HostBinding('attr.disabled')
   protected get nativeDisabled(): '' | null {
     return this.disabled ? '' : null;
   }
 
-  @HostListener('click', ['$event'])
-  @HostListener('dblclick', ['$event'])
-  onClick(e: Event) {
-    if (this.disabled) {
-      e.preventDefault();
-      e.stopImmediatePropagation();
-    }
-  }
+  
 }
