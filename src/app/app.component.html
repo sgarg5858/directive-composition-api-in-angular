@@ -10,16 +10,16 @@
 </ng-template>
 
 
-<button dfButton> Hello I am a primary button </button>
-<button color="secondary" dfButton> Hello I am a primary button </button>
+<button canColor canAppearance canDisable appearance='solid' color="primary" dfButton> Hello I am a primary button </button>
+<button canColor canAppearance canDisable appearance='stroked' color="secondary" dfButton> Hello I am a secondary button </button>
 
-<app-chip [removable]="true" color="primary">I am a primary chip</app-chip>
-<app-chip  [removable]="true" color="secondary">I am a secondary chip</app-chip>
+<app-chip canColor canAppearance canDisable appearance='solid' [removable]="true" color="primary">I am a primary chip</app-chip>
+<app-chip canColor canAppearance canDisable appearance='solid'  [removable]="true" color="secondary">I am a secondary chip</app-chip>
 
-<app-banner color="primary">
+<app-banner canColor canAppearance appearance='solid' color="primary">
   Primary Banner
 </app-banner>
 
-<app-banner color="secondary">
+<app-banner canColor canAppearance appearance='stroked' color="secondary">
   Secondary Banner
 </app-banner>

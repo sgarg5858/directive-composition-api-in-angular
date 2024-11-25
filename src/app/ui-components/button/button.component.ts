@@ -3,7 +3,6 @@ import {
   Component,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaseComponent } from '../base.component';
 
 @Component({
   selector: 'button[dfButton], a[dfButton]',
@@ -15,4 +14,4 @@ import { BaseComponent } from '../base.component';
   styleUrls: ['./button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonComponent extends BaseComponent {}
+export class ButtonComponent {}

@@ -1,11 +1,6 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaseComponent } from '../base.component';
+
 
 @Component({
   selector: 'app-chip',
@@ -18,8 +13,9 @@ import { BaseComponent } from '../base.component';
     <i (click)="onRemove()" *ngIf="removable" class="chip-remove-icon"></i>
   `,
   styleUrls: ['./chip.component.scss'],
+
 })
-export class ChipComponent extends BaseComponent {
+export class ChipComponent {
   @Input()
   removable = false;
 

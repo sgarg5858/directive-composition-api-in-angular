@@ -1,6 +1,5 @@
 import { Component} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaseComponent } from '../base.component';
 
 @Component({
   selector: 'app-banner',
@@ -14,6 +13,6 @@ import { BaseComponent } from '../base.component';
   `,
   styleUrls: ['./banner.component.scss'],
 })
-export class BannerComponent extends BaseComponent{
+export class BannerComponent{
   
 }
